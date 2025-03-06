@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
 import Footer from "@/app/components/footer";
 import Header from "@/app/components/header";
-import { fetchApi } from "./utils/fetch";
+import { fetchApi } from "../utils/fetch";
+
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,28 +23,28 @@ export const metadata: Metadata = {
 };
 
 async function getSession() {
-  const res = await fetchApi("/api/users/me");
+  const res = await fetchApi("/api/users/me")
   if (res) {
     if (res.status === 200) {
-      return res.data;
+      return res.data
     }
-    console.log(res);
+    console.log(res)
     return null;
   }
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getSession();
-
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <div className="bg-gray-200 min-h-screen grid grid-rows-[auto_1fr_auto]">
-          <Header user={user} />
+          <Header />
           <main className="container mx-auto bg-white/50 rounded-xl py-7 px-8 m-6 overflow-hidden">
             {children}
           </main>

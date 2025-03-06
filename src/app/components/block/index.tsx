@@ -8,14 +8,14 @@ const blocks: Record<
   TeamPageBlock["__component"],
   React.ComponentType<{ block: TeamPageBlock }>
 > = {
-  "blocks.spoiler": ({ block }: { block: TeamPageBlock }) => (
-    <SpoilerBlock block={block as SpoilerBlock} />
+  "block.spoiler": ({ block }: { block: TeamPageBlock }) => (
+    <SpoilerBlock block={block as SpoilerBlock} key = {"Spoiler"+block.id}/>
   ),
-  "blocks.testimonial": ({ block }: { block: TeamPageBlock }) => (
-    <TestimonialBlock block={block as TestimonialBlock} />
+  "block.testimonial": ({ block }: { block: TeamPageBlock }) => (
+    <TestimonialBlock block={block as TestimonialBlock} key = {"Testimonial"+block.id} />
   ),
-  "blocks.rich-text": ({ block }: { block: TeamPageBlock }) => (
-    <RichTextBlock block={block as RichTextBlock} />
+  "block.richtext": ({ block }: { block: TeamPageBlock }) => (
+    <RichTextBlock block={block as RichTextBlock} key = {"RichText"+block.id} />
   ),
 };
 

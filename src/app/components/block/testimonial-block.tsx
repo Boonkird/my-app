@@ -1,7 +1,7 @@
 import Image from "next/image";
-
+import styles from "./testimonial-block.module.css";
 export interface TestimonialBlock {
-  __component: "blocks.testimonial";
+  __component: "block.testimonial";
   id: number;
   authorName: string;
   quote: string;
@@ -22,7 +22,8 @@ export function TestimonialBlock({ block }: { block: TestimonialBlock }) {
   return (
     <figure className="relative bg-gray-100 rounded-lg border border-gray-200 overflow-hidden my-6">
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="relative h-64 md:h-full col-span-1">
+        {/* <div className="relative h-64 md:h-full col-span-1"> */}
+        <div className={`relative h-64 md:h-full col-span-1 ${styles.imageContainer}`}>
           <Image
             src={imageUrl}
             alt={block.photo.alternativeText || block.authorName}

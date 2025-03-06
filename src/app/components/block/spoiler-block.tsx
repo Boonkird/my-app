@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export interface SpoilerBlock {
-  __component: "blocks.spoiler";
+  __component: "block.spoiler";
   id: number;
   title: string;
   content: string;
@@ -34,7 +34,7 @@ export function SpoilerBlock({ block }: { block: SpoilerBlock }) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isExpanded ? "max-h-[1000px]" : "max-h-0"
+          isExpanded ? "max-h-screen" : "max-h-0"
         }`}
         aria-hidden={!isExpanded}
       >
