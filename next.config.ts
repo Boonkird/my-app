@@ -3,10 +3,16 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      //{
+      //  protocol: "http",
+      //  hostname: "localhost",
+      // port: "1337",
+      //  pathname: "/uploads/**/*",
+      //},
       {
         protocol: "http",
-        hostname: "localhost",
-        port: "1337",
+        hostname: "https://server-4klj.onrender.com",
+        port: "",
         pathname: "/uploads/**/*",
       },
     ],
