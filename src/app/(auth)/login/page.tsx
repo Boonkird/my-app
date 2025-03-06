@@ -61,7 +61,7 @@ export default function Login() {
                 type="password"
                 id="password"
                 value={password}
-                onChange={(e) => setIdentifier(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 required>
             </Input>
             </div>
