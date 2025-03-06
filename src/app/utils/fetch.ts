@@ -35,11 +35,11 @@ export const fetchApi = async <T>(
         if (populate) queryParams.populate = populate;
         if (filters) queryParams.filters = filters;
 
-        const newUrl = new URL(path, process.env.NEXT_PUBLIC_API_URL);
+        const newUrl = new URL(path, process.env.API_URL);
         newUrl.search = qs.stringify(queryParams,{encodeValuesOnly:true});
         url = newUrl.toString();
     } else {
-        url = `${process.env.NEXT_PUBLIC_API_URL}${path}`;
+        url = `${process.env.API_URL}${path}`;
     }
 
     try {
