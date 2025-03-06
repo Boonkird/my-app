@@ -10,8 +10,8 @@ const nextConfig = {
       //  pathname: "/uploads/**/*",
       //},
       {
-        protocol: "http",
-        hostname: "https://server-4klj.onrender.com",
+        protocol: "https",
+        hostname: "server-4klj.onrender.com",
         port: "",
         pathname: "/uploads/**/*",
       },
