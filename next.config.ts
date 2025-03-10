@@ -11,7 +11,7 @@ const nextConfig = {
       //},
       {
         protocol: "https",
-        hostname: "server-4klj.onrender.com",
+        hostname: "server-bk-i0c8.onrender.com",
         port: "",
         pathname: "/uploads/**/*",
       },
